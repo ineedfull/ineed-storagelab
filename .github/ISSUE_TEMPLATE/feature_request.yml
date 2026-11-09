@@ -1,0 +1,26 @@
+name: 功能建议
+description: 描述希望解决的实际工作问题
+title: "[Feature] "
+body:
+  - type: markdown
+    attributes:
+      value: 请先搜索已有建议。描述 StorageLab 中的具体工作场景，不提交客户隐私或凭证。
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 工作场景与当前困难
+      description: 谁在什么情况下完成什么任务？当前操作在哪里受阻？
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 期望的操作与结果
+      description: 可以附脱敏示意图、输入输出或验收例子。
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 当前替代办法与影响（可选）
+      description: 使用频率、受影响的运行时或系统，以及现有功能能否解决。

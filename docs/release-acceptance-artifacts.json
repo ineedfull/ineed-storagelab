@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "product": "StorageLab",
+  "version": "1.0.0",
+  "date": "2026-10-27",
+  "purpose": "release acceptance; unpublished unsigned test builds",
+  "published": false,
+  "downloadUrls": [],
+  "dirtyBuildExplanation": "Linux/Windows add only package.json homepage=https://www.ineedfull.com to base source commit; source code and lockfile unchanged",
+  "sourcePatchSha256": "a752bf0fdf30451413a78f56a38a2be6867c0381371ac2d3a78ea01525b78e4d",
+  "collections": [
+    {
+      "platform": "macos",
+      "buildId": "1.0.0-20261027T144713615Z-28d8066a",
+      "sourceCommit": "c5c50a2914723bf00846b464e6072460f3113047",
+      "sourceDirty": false,
+      "location": {
+        "kind": "repository",
+        "host": null,
+        "user": null,
+        "directory": "/Users/pangzhigang/develop/com.ineedfull/ineed-storagelab/release/desktop/1.0.0-20261027T144713615Z-28d8066a"
+      },
+      "artifacts": [
+        {
+          "runtime": "electron",
+          "platform": "macos",
+          "arch": "arm64",
+          "format": "dmg",
+          "name": "ineed-storagelab-1.0.0-electron-macos-arm64.dmg",
+          "size": 126140232,
+          "sha256": "44d294287159afc984276483b5ccefa07119e61249f82166f09ec0cd895dedf9"
+        },
+        {
+          "runtime": "electron",
+          "platform": "macos",
+          "arch": "x64",
+          "format": "dmg",
+          "name": "ineed-storagelab-1.0.0-electron-macos-x64.dmg",
+          "size": 127940750,
+          "sha256": "bfa2e06b3480300773aef902e8b0b31fd5a7b99e8b5c4baf2e06697e34b21eaf"
+        }
+      ]
+    },
+    {
+      "platform": "linux",
+      "buildId": "1.0.0-20261027T152120647Z-19c7fae9",
+      "sourceCommit": "c5c50a2914723bf00846b464e6072460f3113047",
+      "sourceDirty": true,
+      "location": {
+        "kind": "ssh-build-directory",
+        "host": "222.71.62.146",
+        "user": "miz",
+        "directory": "/home/miz/ineed-tools-builds/ineed-storagelab/1.0.0-20261027T152120647Z-19c7fae9"
+      },
+      "artifacts": [
+        {
+          "runtime": "electron",
+          "platform": "linux",
+          "arch": "x64",
+          "format": "deb",
+          "name": "ineed-storagelab-1.0.0-electron-linux-amd64.deb",
+          "size": 89152736,
+          "sha256": "1c60983288ce910617f20a91a64b14bb86521a76472dc89f4c702d8e2907f865"
+        },
+        {
+          "runtime": "electron",
+          "platform": "linux",
+          "arch": "x64",
+          "format": "AppImage",
+          "name": "ineed-storagelab-1.0.0-electron-linux-x64.AppImage",
+          "size": 133316305,
+          "sha256": "bb84ee07e2ae65c61960d6b15f4e4ab825f2607f7a969cf1d4dec3f6e2b3aaeb"
+        }
+      ]
+    },
+    {
+      "platform": "windows",
+      "buildId": "1.0.0-20261027T152859269Z-0626ce9a",
+      "sourceCommit": "c5c50a2914723bf00846b464e6072460f3113047",
+      "sourceDirty": true,
+      "location": {
+        "kind": "ssh-build-directory",
+        "host": "222.71.62.146",
+        "user": "miz",
+        "directory": "/home/miz/ineed-tools-builds/ineed-storagelab/1.0.0-20261027T152859269Z-0626ce9a"
+      },
+      "artifacts": [
+        {
+          "runtime": "electron",
+          "platform": "windows",
+          "arch": "x64",
+          "format": "nsis",
+          "name": "ineed-storagelab-1.0.0-electron-windows-x64-setup.exe",
+          "size": 105928552,
+          "sha256": "ca20d78e19c6b7e7cddf95c4e6145320577184dfc7030a01a4f65ec37732a327"
+        }
+      ]
+    }
+  ]
+}

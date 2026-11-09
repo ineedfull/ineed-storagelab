@@ -1,0 +1,92 @@
+[
+  {
+    "file": "directory-delivery.webp",
+    "sourceRepository": "ineed-storagelab-website",
+    "sourcePath": "public/images/app/2026-11-01/directory-delivery.webp",
+    "capturedAt": "2026-11-01",
+    "runtime": "Electron native development host",
+    "productVersion": "1.0.0",
+    "data": "隔离演示数据；原生宿主截图不代表所有平台或安装包验收",
+    "transformation": "原文件复制，未修改像素",
+    "width": 2880,
+    "height": 1736,
+    "sha256": "265d56a60f38852e1445bf6c64d704d84853c25ef84a0e35cdda6ce6959c60ec"
+  },
+  {
+    "file": "objects.webp",
+    "sourceRepository": "ineed-storagelab",
+    "sourcePath": "tests/ui/fixture.js + README 专用合成演示数据",
+    "capturedAt": "2026-11-03",
+    "runtime": "Chrome 浏览器 + 隔离测试桥；非原生云账号验收",
+    "sourceCommit": "a0bf4cfb202207b92f94977a9d5550b8b068a72a",
+    "data": "回环 Endpoint、合成对象与任务；未读取用户配置或真实凭证",
+    "transformation": "PNG 无损转 WebP",
+    "width": 1440,
+    "height": 900,
+    "sha256": "cdb5bb2f75ee493134958a66dfbda02f491420a7472c0289010c3dcdb9ec9070"
+  },
+  {
+    "file": "tasks.webp",
+    "sourceRepository": "ineed-storagelab",
+    "sourcePath": "tests/ui/fixture.js + README 专用合成演示数据",
+    "capturedAt": "2026-11-03",
+    "runtime": "Chrome 浏览器 + 隔离测试桥；非原生云账号验收",
+    "sourceCommit": "a0bf4cfb202207b92f94977a9d5550b8b068a72a",
+    "data": "回环 Endpoint、合成对象与任务；未读取用户配置或真实凭证",
+    "transformation": "PNG 无损转 WebP",
+    "width": 1440,
+    "height": 900,
+    "sha256": "ed2ff3b4bb9bc595f4922fe24150a5e899e3f07c02595b8ea3be0102ac3e4141"
+  },
+  {
+    "file": "connection.webp",
+    "sourceRepository": "ineed-storagelab",
+    "sourcePath": "tests/ui/fixture.js + README 专用合成演示数据",
+    "capturedAt": "2026-11-03",
+    "runtime": "Chrome 浏览器 + 隔离测试桥；非原生云账号验收",
+    "sourceCommit": "a0bf4cfb202207b92f94977a9d5550b8b068a72a",
+    "data": "回环 Endpoint、合成对象与任务；未读取用户配置或真实凭证",
+    "transformation": "PNG 无损转 WebP",
+    "width": 1440,
+    "height": 900,
+    "sha256": "23550eb1a076ab048e1c503735d1c2583642bec7e738207cdc0dd080c245ed3c"
+  },
+  {
+    "file": "tasks-dark.webp",
+    "sourceRepository": "ineed-storagelab",
+    "sourcePath": "tests/ui/fixture.js + README 专用合成演示数据",
+    "capturedAt": "2026-11-03",
+    "runtime": "Chrome 浏览器 + 隔离测试桥；非原生云账号验收",
+    "sourceCommit": "a0bf4cfb202207b92f94977a9d5550b8b068a72a",
+    "data": "回环 Endpoint、合成对象与任务；未读取用户配置或真实凭证",
+    "transformation": "PNG 无损转 WebP",
+    "width": 1440,
+    "height": 900,
+    "sha256": "11bad3d166482316c95c9b06007c6ead90c3c15198ba87621a0d23441a508625"
+  },
+  {
+    "file": "object-versions.webp",
+    "sourceRepository": "ineed-tools",
+    "sourcePath": "scratch/2026-10-28-storagelab-full-validation/screenshots/native-version-restored.png",
+    "capturedAt": "2026-10-28",
+    "runtime": "Electron 原生开发宿主 + 隔离本机 MinIO",
+    "data": "生成的临时桶及对象；历史开发截图",
+    "transformation": "PNG 无损转 WebP",
+    "width": 2880,
+    "height": 1736,
+    "sha256": "ffa943d266b1c40aeae73a5cc98d6fc6ec80e914c07242226be0ae5e3707254e"
+  },
+  {
+    "file": "wechat-qr.png",
+    "sourceRepository": "ineed-mqtt-website",
+    "sourcePath": "public/images/wechat-qr.png",
+    "purpose": "扫码加微信，非公众号二维码",
+    "sha256": "e28ce35e9bd504f878ed7f17d4b5acbf2da817e24a3fe9eb9bacac78a5fccfd0",
+    "transformation": "原文件复制，未缩小或重绘"
+  },
+  {
+    "file": "logo.svg",
+    "source": "本产品现用 SVG 品牌副本",
+    "sha256": "0dea795ef346bc1687241fdbee189b340aac67a4e4791e4c550f01a6b3e08ba3"
+  }
+]

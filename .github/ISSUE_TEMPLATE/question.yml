@@ -1,0 +1,24 @@
+name: 使用咨询
+description: 咨询使用方式或文档不清楚的地方
+title: "[Question] "
+body:
+  - type: markdown
+    attributes:
+      value: 请先查看产品 README 和 docs 中的使用说明。附加材料请脱敏；安全问题请私下联系 xiaopanghhh@163.com。
+  - type: input
+    id: environment
+    attributes:
+      label: 应用版本、系统与运行时
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: 希望完成什么，遇到了什么困难
+      description: 说明已阅读的文档或已尝试的操作。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 脱敏示例或截图（可选）

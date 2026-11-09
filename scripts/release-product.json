@@ -1,0 +1,10 @@
+{
+  "product": "StorageLab",
+  "slug": "ineed-storagelab",
+  "identifiers": {
+    "electron": "com.ineedfull.storagelab"
+  },
+  "runtimeDirectories": {
+    "electron": "."
+  }
+}

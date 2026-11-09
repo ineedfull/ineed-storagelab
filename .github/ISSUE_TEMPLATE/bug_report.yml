@@ -1,0 +1,63 @@
+name: Bug 反馈
+description: 报告可以复现的功能或界面问题
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢帮助改进 StorageLab。请先搜索已有问题，所有附件均需脱敏。
+        安全漏洞请私下联系 xiaopanghhh@163.com，不在此提交有效凭证或利用细节。
+  - type: input
+    id: version
+    attributes:
+      label: 应用版本或源码提交
+      description: 尽量附构建号，并说明安装包还是源码开发版。
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: 系统版本与架构
+      placeholder: 例如 macOS 版本 / arm64，Windows 版本 / x64，Linux 发行版 / x64
+    validations:
+      required: true
+  - type: dropdown
+    id: runtime
+    attributes:
+      label: 运行时
+      options:
+        - Electron
+        - 浏览器预览
+        - 不确定
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: 功能与环境
+      description: 提供商、原生 SDK/S3、操作类型、是否涉及版本或续传；桶名、Key、文件路径请脱敏，不提交凭证或签名 URL。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 最小复现步骤
+      placeholder: |
+        1. 使用隔离配置启动……
+        2. 执行……
+        3. 出现……（每次 / 偶发，约多久）
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 预期与实际结果
+      description: 界面问题请附脱敏截图；无窗口、卡死或退出异常请说明进程是否仍在。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 脱敏日志或补充证据（可选）
+      description: 仅贴必要片段；不要附真实密钥、签名 URL、客户数据或完整用户数据库。
+      render: text

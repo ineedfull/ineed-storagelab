@@ -1,0 +1,114 @@
+{
+  "name": "ineed-storagelab",
+  "productName": "StorageLab",
+  "homepage": "https://www.ineedfull.com",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "private": true,
+  "type": "module",
+  "main": "electron/main.js",
+  "engines": {
+    "node": ">=22.16"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "test": "node --test tests/*.test.js scripts/*.test.mjs",
+    "start": "electron .",
+    "test:integration": "node --test tests/integration/*.test.js",
+    "dev:electron": "npm run build && node scripts/dev-electron.mjs",
+    "test:ui": "playwright test",
+    "test:native": "npm run build && playwright test -c playwright.native.config.js",
+    "test:soak": "npm run build && node scripts/storage-soak.mjs",
+    "test:directory:soak": "npm run build && node scripts/directory-soak.mjs",
+    "package:mac": "npm run package:desktop:mac",
+    "package:mac:dir": "npm run build && electron-builder --dir --mac --arm64 -c.mac.identity=null",
+    "release:plan": "node scripts/desktop-release.mjs plan",
+    "release:build": "node scripts/desktop-release.mjs build",
+    "release:verify": "node scripts/desktop-release.mjs verify",
+    "release:upload": "node scripts/release-upload.mjs",
+    "test:release": "node --test scripts/desktop-release.test.mjs scripts/release-upload.test.mjs",
+    "package:win": "node scripts/desktop-release.mjs build --platform=windows --arch=x64",
+    "package:linux": "node scripts/desktop-release.mjs build --platform=linux --arch=x64",
+    "package:desktop:mac": "node scripts/desktop-release.mjs build --platform=macos --arch=all",
+    "generate:icons": "node scripts/generate-icons.mjs"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "3.1157.0",
+    "@aws-sdk/lib-storage": "3.1157.0",
+    "@aws-sdk/s3-request-presigner": "3.1157.0",
+    "@smithy/node-http-handler": "4.13.0",
+    "@volcengine/tos-sdk": "2.9.1",
+    "ali-oss": "6.23.0",
+    "cos-nodejs-sdk-v5": "3.0.0",
+    "esdk-obs-nodejs": "3.26.2",
+    "lucide-vue-next": "0.468.0",
+    "vue": "3.5.40"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.58.2",
+    "@resvg/resvg-js": "2.6.2",
+    "@vitejs/plugin-vue": "6.0.5",
+    "electron": "43.1.0",
+    "electron-builder": "26.0.12",
+    "vite": "8.1.5"
+  },
+  "build": {
+    "appId": "com.ineedfull.storagelab",
+    "productName": "StorageLab",
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "src/domain/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "icon": "build/icon.icns",
+      "target": "dmg",
+      "identity": null,
+      "artifactName": "${productName}-${version}-macos-${arch}.${ext}",
+      "extendInfo": {
+        "CFBundleName": "StorageLab",
+        "CFBundleDisplayName": "StorageLab"
+      }
+    },
+    "win": {
+      "icon": "build/icon.ico",
+      "target": "nsis",
+      "artifactName": "${productName}-${version}-windows-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "deleteAppDataOnUninstall": false,
+      "installerLanguages": [
+        "zh_CN",
+        "en_US"
+      ],
+      "displayLanguageSelector": true,
+      "artifactName": "${productName}-${version}-windows-${arch}-setup.${ext}"
+    },
+    "linux": {
+      "icon": "build/icon.png",
+      "target": [
+        "deb",
+        "AppImage"
+      ],
+      "artifactName": "${productName}-${version}-linux-${arch}.${ext}",
+      "category": "Development",
+      "maintainer": "Ineed",
+      "vendor": "Ineed",
+      "executableName": "ineed-storagelab"
+    }
+  },
+  "description": "对象存储工具箱",
+  "author": "Ineed"
+}

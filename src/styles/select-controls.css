@@ -1,0 +1,47 @@
+/* Ineed Tool single-select contract. Keep product copies identical to this file. */
+:root {
+  --select-arrow-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4 6 4 4 4-4' fill='none' stroke='%23536176' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --select-arrow-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4 6 4 4 4-4' fill='none' stroke='%23afbdd2' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --select-arrow: var(--select-arrow-light);
+  --select-arrow-size: 16px;
+  --select-arrow-offset: 8px;
+  --select-padding-end: 32px;
+}
+[data-theme="light"] {
+  --select-arrow: var(--select-arrow-light);
+}
+[data-theme="dark"] {
+  --select-arrow: var(--select-arrow-dark);
+}
+@media (prefers-color-scheme: dark) {
+  [data-theme="system"] {
+    --select-arrow: var(--select-arrow-dark);
+  }
+}
+.large-font,
+[data-large="true"] {
+  --select-arrow-size: 18px;
+  --select-padding-end: 34px;
+}
+/* Specificity protects the arrow from component background/padding shorthands.
+   List boxes and multi-selects retain native rendering and have no chevron. */
+:root select:not([multiple]):not([size]),
+:root select[size="1"]:not([multiple]) {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: var(--select-padding-end);
+  background-image: var(--select-arrow);
+  background-repeat: no-repeat;
+  background-position: right var(--select-arrow-offset) center;
+  background-size: var(--select-arrow-size) var(--select-arrow-size);
+  text-overflow: ellipsis;
+}
+/* Let the OS provide a visible indicator in Windows high contrast mode. */
+@media (forced-colors: active) {
+  :root select:not([multiple]):not([size]),
+  :root select[size="1"]:not([multiple]) {
+    appearance: auto;
+    -webkit-appearance: auto;
+    background-image: none;
+  }
+}

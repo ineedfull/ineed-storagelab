@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-29T16:29:03.027798+00:00",
+  "releaseDate": "2026-10-30",
+  "releaseType": "test",
+  "autoUpdateFeed": false,
+  "baseUrl": "http://downloads.ineedfull.com:9000/ineed-downloads",
+  "access": {
+    "authenticationRequired": false,
+    "urlType": "static",
+    "expiresAt": null,
+    "transport": "http",
+    "tls": false,
+    "anonymousListAllowed": false,
+    "anonymousWriteAllowed": false
+  },
+  "limitations": [
+    "本清单仅含StorageLab 1.0.0五个Electron包；完整四款工具24项清单位于工具工作区docs/downloads/2026-10-30/downloads.json。",
+    "StorageLab和NetTool仅Electron；MQTT/LinkLab的Tauri当前下载只有macOS。",
+    "StorageLab包来自干净提交35b2148d61b995fcf2545098d42331bca7232259；此前三款包包含当时未提交快照，其builds来源与sourceDirty原样保留。",
+    "均为未完成正式代码签名及Apple公证的测试分发；这是静态下载清单，没有发布自动更新feed。",
+    "实际入口为HTTP 9000；HTTPS网站可能限制HTTP下载，不得直接把URL改为HTTPS或省略端口。跨域JS下载/CORS未验收，优先普通超链接。",
+    "StorageLab macOS arm64最终DMG实际副本、真实钥匙串、跨进程恢复及同版替换通过；Intel Mac仅容器/身份/资源检查，未实机运行。",
+    "StorageLab Linux基于Ubuntu24.04：DEB提取后的Xvfb两轮真实MinIO流程通过，basic_text下拒绝加密保存并使用显式会话凭证；AppImage extract-and-run的Node/SQLite通过。未验系统DEB安装、FUSE或物理桌面/发行版矩阵。",
+    "StorageLab Windows x64由Ubuntu24.04+Wine9构建；NSIS安装/同版重装/卸载、生成SQLite哨兵保留及包内SQLite通过，仅为兼容层验收，Windows原生GUI/DPAPI/生产配置升级未验。",
+    "云厂商原生SDK已做回环协议与故障验收，没有逐家真实云账号认证。Electron通常占用更多内存，实际占用取决于任务负载。"
+  ],
+  "latestChanges": {
+    "toolId": "storagelab",
+    "features": [
+      "对象浏览、分页与预览，上传/下载与显式上传断点续传",
+      "MinIO/通用S3及常用云预设，OSS/OBS/COS/TOS官方SDK原生适配",
+      "对象标签、Metadata、复制/受控重命名、版本与恢复",
+      "任务筛选、空状态、本地路径/文件操作与删除记录",
+      "全窗口/表单/提示/容量显示统一，以及旧版MinIO批量删除Content-MD5兼容修复"
+    ],
+    "publishedPackageCount": 5,
+    "releaseNotes": "2026-10-30.md"
+  },
+  "builds": [
+    {
+      "toolId": "storagelab",
+      "productSlug": "ineed-storagelab",
+      "buildId": "1.0.0-20261029T161457613Z-87f4846e",
+      "sourceCommit": "35b2148d61b995fcf2545098d42331bca7232259",
+      "sourceDirty": false,
+      "platform": "macos",
+      "buildEnvironment": {
+        "host": "macOS arm64",
+        "electron": "43.1.0",
+        "windowsCrossBuild": false,
+        "wine": null
+      }
+    },
+    {
+      "toolId": "storagelab",
+      "productSlug": "ineed-storagelab",
+      "buildId": "1.0.0-20261029T161409617Z-bc63eed2",
+      "sourceCommit": "35b2148d61b995fcf2545098d42331bca7232259",
+      "sourceDirty": false,
+      "platform": "linux",
+      "buildEnvironment": {
+        "host": "Ubuntu 24.04 x86_64",
+        "electron": "43.1.0",
+        "windowsCrossBuild": false,
+        "wine": null
+      }
+    },
+    {
+      "toolId": "storagelab",
+      "productSlug": "ineed-storagelab",
+      "buildId": "1.0.0-20261029T161640305Z-be32b99a",
+      "sourceCommit": "35b2148d61b995fcf2545098d42331bca7232259",
+      "sourceDirty": false,
+      "platform": "windows",
+      "buildEnvironment": {
+        "host": "Ubuntu 24.04 x86_64",
+        "electron": "43.1.0",
+        "windowsCrossBuild": true,
+        "wine": "9.0"
+      }
+    }
+  ],
+  "packages": [
+    {
+      "id": "storagelab-electron-macos-arm64-dmg",
+      "toolId": "storagelab",
+      "toolName": "StorageLab",
+      "productSlug": "ineed-storagelab",
+      "version": "1.0.0",
+      "buildId": "1.0.0-20261029T161457613Z-87f4846e",
+      "runtime": "electron",
+      "platform": "macos",
+      "arch": "arm64",
+      "architectureLabel": "Apple 芯片（M 系列）",
+      "format": "dmg",
+      "fileName": "ineed-storagelab-1.0.0-electron-macos-arm64.dmg",
+      "url": "http://downloads.ineedfull.com:9000/ineed-downloads/public/ineed-storagelab/1.0.0/1.0.0-20261029T161457613Z-87f4846e/ineed-storagelab-1.0.0-electron-macos-arm64.dmg",
+      "sizeBytes": 132109690,
+      "sha256": "6895d3913bd3bf8e8599925c0aabf24c6d745ff411e8dde89f635bf8b483a083",
+      "bucket": "ineed-downloads",
+      "objectKey": "public/ineed-storagelab/1.0.0/1.0.0-20261029T161457613Z-87f4846e/ineed-storagelab-1.0.0-electron-macos-arm64.dmg",
+      "availability": "verified",
+      "verification": {
+        "headStatus": 200,
+        "rangeStatus": 206,
+        "getStatus": 200,
+        "sizeMatched": true,
+        "sha256Matched": true,
+        "verifiedAt": "2026-10-29T16:27:07.973826+00:00"
+      },
+      "nativeAcceptance": "实际DMG副本启动；真实safeStorage加密/跨进程重开/同版替换，隔离MinIO上传下载及批量删除、任务筛选通过。"
+    },
+    {
+      "id": "storagelab-electron-macos-x64-dmg",
+      "toolId": "storagelab",
+      "toolName": "StorageLab",
+      "productSlug": "ineed-storagelab",
+      "version": "1.0.0",
+      "buildId": "1.0.0-20261029T161457613Z-87f4846e",
+      "runtime": "electron",
+      "platform": "macos",
+      "arch": "x64",
+      "architectureLabel": "Intel 芯片",
+      "format": "dmg",
+      "fileName": "ineed-storagelab-1.0.0-electron-macos-x64.dmg",
+      "url": "http://downloads.ineedfull.com:9000/ineed-downloads/public/ineed-storagelab/1.0.0/1.0.0-20261029T161457613Z-87f4846e/ineed-storagelab-1.0.0-electron-macos-x64.dmg",
+      "sizeBytes": 133869751,
+      "sha256": "e762fb027cc1b81c0219f460fb512bb7270339aa38398e08bcfb020e4247ed70",
+      "bucket": "ineed-downloads",
+      "objectKey": "public/ineed-storagelab/1.0.0/1.0.0-20261029T161457613Z-87f4846e/ineed-storagelab-1.0.0-electron-macos-x64.dmg",
+      "availability": "verified",
+      "verification": {
+        "headStatus": 200,
+        "rangeStatus": 206,
+        "getStatus": 200,
+        "sizeMatched": true,
+        "sha256Matched": true,
+        "verifiedAt": "2026-10-29T16:26:56.138512+00:00"
+      },
+      "nativeAcceptance": "DMG verify/只读挂载、x86_64架构/身份/资源检查通过；未在Intel Mac启动。"
+    },
+    {
+      "id": "storagelab-electron-linux-x64-deb",
+      "toolId": "storagelab",
+      "toolName": "StorageLab",
+      "productSlug": "ineed-storagelab",
+      "version": "1.0.0",
+      "buildId": "1.0.0-20261029T161409617Z-bc63eed2",
+      "runtime": "electron",
+      "platform": "linux",
+      "arch": "x64",
+      "architectureLabel": "64 位（x86_64）",
+      "format": "deb",
+      "fileName": "ineed-storagelab-1.0.0-electron-linux-amd64.deb",
+      "url": "http://downloads.ineedfull.com:9000/ineed-downloads/public/ineed-storagelab/1.0.0/1.0.0-20261029T161409617Z-bc63eed2/ineed-storagelab-1.0.0-electron-linux-amd64.deb",
+      "sizeBytes": 91770532,
+      "sha256": "7f50e36ae03bf4a43fe8ce5bff24876b884a3ca9cc8966e4c4ad5629cb062c02",
+      "bucket": "ineed-downloads",
+      "objectKey": "public/ineed-storagelab/1.0.0/1.0.0-20261029T161409617Z-bc63eed2/ineed-storagelab-1.0.0-electron-linux-amd64.deb",
+      "availability": "verified",
+      "verification": {
+        "headStatus": 200,
+        "rangeStatus": 206,
+        "getStatus": 200,
+        "sizeMatched": true,
+        "sha256Matched": true,
+        "verifiedAt": "2026-10-29T16:26:55.971539+00:00"
+      },
+      "nativeAcceptance": "DEB提取后默认sandbox+Xvfb两轮真实MinIO上传下载/批量删除/筛选；无安全后端拒绝加密保存、会话重启清空通过；非系统安装。"
+    },
+    {
+      "id": "storagelab-electron-linux-x64-AppImage",
+      "toolId": "storagelab",
+      "toolName": "StorageLab",
+      "productSlug": "ineed-storagelab",
+      "version": "1.0.0",
+      "buildId": "1.0.0-20261029T161409617Z-bc63eed2",
+      "runtime": "electron",
+      "platform": "linux",
+      "arch": "x64",
+      "architectureLabel": "64 位（x86_64）",
+      "format": "AppImage",
+      "fileName": "ineed-storagelab-1.0.0-electron-linux-x64.AppImage",
+      "url": "http://downloads.ineedfull.com:9000/ineed-downloads/public/ineed-storagelab/1.0.0/1.0.0-20261029T161409617Z-bc63eed2/ineed-storagelab-1.0.0-electron-linux-x64.AppImage",
+      "sizeBytes": 139422490,
+      "sha256": "5444453d48ba35fc9af03ee486a85d1c5fd15780e975b8aa90a59bce4599ad2d",
+      "bucket": "ineed-downloads",
+      "objectKey": "public/ineed-storagelab/1.0.0/1.0.0-20261029T161409617Z-bc63eed2/ineed-storagelab-1.0.0-electron-linux-x64.AppImage",
+      "availability": "verified",
+      "verification": {
+        "headStatus": 200,
+        "rangeStatus": 206,
+        "getStatus": 200,
+        "sizeMatched": true,
+        "sha256Matched": true,
+        "verifiedAt": "2026-10-29T16:27:41.238536+00:00"
+      },
+      "nativeAcceptance": "实际extract-and-run启动内置Node，SQLite读写通过；非FUSE或GUI验收。"
+    },
+    {
+      "id": "storagelab-electron-windows-x64-nsis",
+      "toolId": "storagelab",
+      "toolName": "StorageLab",
+      "productSlug": "ineed-storagelab",
+      "version": "1.0.0",
+      "buildId": "1.0.0-20261029T161640305Z-be32b99a",
+      "runtime": "electron",
+      "platform": "windows",
+      "arch": "x64",
+      "architectureLabel": "64 位（x86_64）",
+      "format": "nsis",
+      "fileName": "ineed-storagelab-1.0.0-electron-windows-x64-setup.exe",
+      "url": "http://downloads.ineedfull.com:9000/ineed-downloads/public/ineed-storagelab/1.0.0/1.0.0-20261029T161640305Z-be32b99a/ineed-storagelab-1.0.0-electron-windows-x64-setup.exe",
+      "sizeBytes": 110149893,
+      "sha256": "f32586b057782ee82f3cdab2ee29d3cba0bd99b02a9d8b82dfc0d0b5f169b104",
+      "bucket": "ineed-downloads",
+      "objectKey": "public/ineed-storagelab/1.0.0/1.0.0-20261029T161640305Z-be32b99a/ineed-storagelab-1.0.0-electron-windows-x64-setup.exe",
+      "availability": "verified",
+      "verification": {
+        "headStatus": 200,
+        "rangeStatus": 206,
+        "getStatus": 200,
+        "sizeMatched": true,
+        "sha256Matched": true,
+        "verifiedAt": "2026-10-29T16:27:31.305790+00:00"
+      },
+      "nativeAcceptance": "Wine9实际NSIS安装/同版重装/卸载、生成SQLite哨兵保留、包内Node/SQLite通过；非Windows原生GUI/DPAPI验收。"
+    }
+  ]
+}

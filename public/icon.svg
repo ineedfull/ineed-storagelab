@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none" role="img" aria-labelledby="title">
+<title id="title">StorageLab — Ineed 标准图标</title>
+<defs><linearGradient id="brand-gradient" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07CFE5"/><stop offset=".55" stop-color="#3159DA"/><stop offset="1" stop-color="#BD35EF"/></linearGradient></defs>
+<rect width="256" height="256" rx="58" fill="url(#brand-gradient)"/>
+<g stroke="white" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"><circle cx="69" cy="78" r="12" fill="white" stroke="none"/><path d="M69 119v60" stroke-width="22"/><path d="m117 96 49-28 49 28v73l-49 28-49-28zM117 96l49 28 49-28M166 124v73"/></g></svg>

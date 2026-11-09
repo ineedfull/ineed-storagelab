@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-28",
+  "directory": "/Users/pangzhigang/develop/com.ineedfull/ineed-storagelab/release/desktop/1.0.0-20261028T045521234Z-5986f02e",
+  "sourceCommit": "ab00e9ed8c8e0437b6da36e56dba6f069f1172af",
+  "sourceDirty": true,
+  "artifacts": [
+    {
+      "runtime": "electron",
+      "platform": "macos",
+      "arch": "arm64",
+      "format": "dmg",
+      "name": "ineed-storagelab-1.0.0-electron-macos-arm64.dmg",
+      "size": 126172008,
+      "sha256": "9c41b60037889c2d44f73092688d4fe56eddb348484cbc723582586f3f55ea72"
+    },
+    {
+      "runtime": "electron",
+      "platform": "macos",
+      "arch": "x64",
+      "format": "dmg",
+      "name": "ineed-storagelab-1.0.0-electron-macos-x64.dmg",
+      "size": 127950588,
+      "sha256": "9ac02a54c16a8eec98450ab09190c5f308b0387f7cdc4ae81dae9bc2ebd8983e"
+    }
+  ],
+  "integrity": "passed",
+  "installation": "not-verified-this-build",
+  "runtime": "macos-arm64-DMG-mounted-production-smoke-passed",
+  "signing": "not-verified",
+  "publication": "not-uploaded",
+  "runtimeBoundary": "isolated appData; session credentials; mock-keychain; bootstrap, SQLite, real MinIO browse, settings reload; not real keychain or OS install acceptance"
+}
