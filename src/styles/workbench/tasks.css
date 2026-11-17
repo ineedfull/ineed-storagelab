@@ -1,0 +1,250 @@
+.tasks {
+  overflow: auto;
+  flex: 1;
+  padding: 0 16px;
+  container-type: inline-size;
+  container-name: task-center;
+}
+.task-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.task-header > .toolbar {
+  padding: 12px 0;
+  flex-wrap: wrap;
+}
+.task-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-control) var(--space-section);
+  padding-bottom: 12px;
+}
+.task-direction-filter {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+.task-direction-filter button {
+  background: transparent;
+  border-color: transparent;
+}
+.task-direction-filter button[aria-pressed="true"] {
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-color: transparent;
+}
+.task-count {
+  margin: 0;
+}
+.task-empty {
+  min-height: clamp(240px, 50vh, 440px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 16px 0;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  text-align: center;
+}
+.task-empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.task-empty h3 {
+  margin: 0;
+  font-size: var(--font-title);
+}
+.task-empty p {
+  max-width: 400px;
+  margin: 0;
+  color: var(--muted);
+}
+.task-empty-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-control);
+  margin-top: 4px;
+}
+.task-empty-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.job {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 8px 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 0.8fr) auto;
+  gap: 8px 24px;
+  align-items: center;
+  overflow-wrap: anywhere;
+}
+.job > div {
+  min-width: 0;
+}
+.job-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.job-direction {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  color: var(--accent);
+  font-size: var(--font-control);
+}
+.job-title,
+.job-context,
+.job-key {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.job-title {
+  min-width: 0;
+}
+.job p {
+  margin: 0;
+}
+.job .job-context {
+  margin-top: 4px;
+  font-size: var(--font-control);
+  color: var(--muted);
+}
+.job .job-key {
+  margin-top: 2px;
+  font-size: var(--font-aux);
+  color: var(--muted);
+}
+.job-transfer {
+  display: grid;
+  gap: 8px;
+}
+.job-metrics {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  font-size: var(--font-control);
+  font-variant-numeric: tabular-nums;
+}
+.job-percentage {
+  color: var(--muted);
+}
+.job progress {
+  appearance: none;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 6px;
+  border: 0;
+  border-radius: 3px;
+  overflow: hidden;
+  background: var(--side);
+  accent-color: var(--accent);
+  --progress-color: var(--accent);
+}
+.job progress::-webkit-progress-bar {
+  background: var(--side);
+  border-radius: 3px;
+}
+.job progress::-webkit-progress-value {
+  background: var(--progress-color);
+  border-radius: 3px;
+}
+.job[data-state="success"] progress {
+  --progress-color: var(--success);
+}
+.job[data-state="failed"] progress {
+  --progress-color: var(--error);
+}
+.job-summary {
+  display: grid;
+  justify-items: end;
+  gap: 8px;
+}
+.job-local-state {
+  font-size: var(--font-aux);
+}
+.job-summary-heading,
+.job-file-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.job-summary-heading {
+  flex-wrap: wrap;
+}
+.job-file-actions {
+  flex-shrink: 0;
+  gap: 4px;
+}
+.job-file-actions .icon-button {
+  min-width: 28px;
+  min-height: 28px;
+  padding: 4px;
+}
+.job-state {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: var(--font-control);
+  color: var(--muted);
+  background: var(--side);
+}
+.job[data-state="success"] .job-state {
+  color: var(--success);
+  background: color-mix(in srgb, var(--success) 10%, transparent);
+}
+.job[data-state="failed"] .job-state {
+  color: var(--error);
+  background: color-mix(in srgb, var(--error) 10%, transparent);
+}
+.job[data-state="running"] .job-state {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+.job-time,
+.job-speed {
+  color: var(--muted);
+  font-size: var(--font-aux);
+  white-space: nowrap;
+}
+.job-feedback {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 4px;
+}
+.job-warning {
+  color: var(--warning);
+}

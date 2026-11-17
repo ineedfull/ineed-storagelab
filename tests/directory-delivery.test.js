@@ -105,7 +105,7 @@ async function fixture(
     app: {
       getName: () => "StorageLab",
       getVersion: () => "1.0.0",
-      getPath: () => root,
+      getPath: (name) => name === "userData" ? join(root, "data") : root,
     },
   });
   t.after(async () => {

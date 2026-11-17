@@ -12,6 +12,21 @@
 6. `electron/store.js`使用独立userData下schema3 SQLite（兼容schema1/2），将公开配置和凭证blob分开；`electron/vault.js`只接受安全safeStorage后端，拒绝Linux basic_text。不可用时用户明确选择会话模式，绝无明文落盘降级。设置和历史不与其他Tool共享。
 7. `tests/*.test.js`验证领域/IPC/存储/S3/队列/路径/取消/异步界面；`tests/integration/`使用隔离回环服务；`tests/ui/`是浏览器fixture；`tests/native/`使用真实Electron与本地MinIO。发布测试在`scripts/*.test.mjs`，不接网络。
 
+## COS/TOS 适配器内部边界（2026-11-17）
+
+`electron/providers/cos.js`、`tos.js` 保持原有 `createCosClient` / `createTosClient` API。
+每家各自的 `cos/`、`tos/` 目录包含 `schema.js`（允许字段、错误和编码规则）、
+`requestMapping.js`（公共命令到原生参数）、`responseMapping.js`（原生结果到公共形状）。
+转换模块不发请求、不注册监听、不拥有上传会话；也不把两家签名规则合成通用实现。
+
+原适配器继续拥有 SDK、单次请求、AsyncLocalStorage 请求上下文、取消/时限与下载流，
+并在成功响应验证后维护分片记录。正文收到后再绑定空闲超时，结束/错误/取消时统一释放，
+不在拿到响应头时提前销毁。原始 Key、opaque 分页标记和不重试写入的语义保持原样。
+验证看 `tests/cos-native.test.js`、`tos-native.test.js`、下载超时及分页测试，使用回环服务。
+
+`src/styles/workbench.css` 是有序入口，`src/styles/workbench/` 依次保留外壳/控件、对象浏览、
+任务、对象弹窗、响应式覆盖和外壳弹窗/目录交付样式。规则顺序仍影响覆盖关系。
+
 ## 不变量与生命周期
 
 最多100连接、100排队、200最近任务；对象每页200。列桶按服务返回的opaque游标聚合，最多100页/10000桶；重复或缺失游标、超限及中途失败均拒绝整次列桶，不返回伪完整列表；已知桶入口仍可用。OBS的BucketName在适配器映射为公共Name，marker与S3游标双向转换；TOS官方接口单页全量，不额外发送S3分页字段。传输并发1–4默认2，超时5–120秒默认30。四家原生GET等待响应头保持有界，收到正文后改为socket空闲超时；持续传输可超过阈值，不提前消费或缓存全文件。结束/失败解除监听，清理幂等，防止旧响应影响复用socket；用户取消与client.destroy仍贯穿正文。非GET操作保留原有请求时限。上传单文件64GiB，普通上传分片8MiB且分片并发2；显式续传每片8MiB串行，完整文件使用有界读取计算SHA-256。普通上传和显式续传之外，目录交付通过独立有界批次调度。AWS数据面通常最多3次尝试，四家原生关闭SDK自动重试；历史版本恢复客户端仅1次，避免Copy重复创建新版本。checksum WHEN_REQUIRED，TLS验证始终开启。

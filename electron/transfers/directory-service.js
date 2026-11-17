@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { join } from "node:path";
-import { writeFile } from "node:fs/promises";
+import { createSafeExportWriter } from "../safe-export.js";
 import { HeadObjectCommand } from "@aws-sdk/client-s3";
 import { fail } from "../../src/domain/errors.js";
 import { assertUploadPolicy } from "../../src/domain/providers.js";
@@ -448,9 +448,8 @@ export function createDirectoryService({
         filters: [{ name: "JSON", extensions: ["json"] }],
       });
       if (picked.canceled || !picked.filePath) return { cancelled: true };
-      await writeFile(picked.filePath, JSON.stringify(manifest, null, 2), {
-        mode: 0o600,
-      });
+      const writeExport = createSafeExportWriter({ protectedDirectories: [app.getPath("userData")] });
+      await writeExport(picked.filePath, JSON.stringify(manifest, null, 2));
       return { path: picked.filePath };
     },
     dispose() {

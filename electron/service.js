@@ -1,6 +1,7 @@
+import { createSafeExportWriter } from "./safe-export.js";
 import { EventEmitter } from "node:events";
 import { basename, join } from "node:path";
-import { lstat, writeFile } from "node:fs/promises";
+import { lstat } from "node:fs/promises";
 import { METHODS, validatePayload } from "./ipc.js";
 import { fail, AppError } from "../src/domain/errors.js";
 import { createProviderClient } from "./providers/client.js";
@@ -351,11 +352,8 @@ export function createService({
             filters: [{ name: "JSON", extensions: ["json"] }],
           });
           if (picked.canceled || !picked.filePath) return { cancelled: true };
-          await writeFile(
-            picked.filePath,
-            JSON.stringify(await jobRows(), null, 2),
-            { mode: 0o600 },
-          );
+          const writeExport = createSafeExportWriter({ protectedDirectories: [app.getPath("userData")] });
+          await writeExport(picked.filePath, JSON.stringify(await jobRows(), null, 2));
           return { path: picked.filePath };
         }
         case "checkConnection":

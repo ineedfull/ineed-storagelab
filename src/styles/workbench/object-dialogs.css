@@ -1,0 +1,251 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: #080e1a88;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.dialog {
+  width: min(660px, 100%);
+  max-height: calc(100dvh - 48px);
+  overflow: auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 16px 80px #0005;
+}
+.dialog > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.dialog > header h2 {
+  margin: 0;
+  font-size: var(--font-title);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+}
+.form-grid label {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+.form-grid .check {
+  display: flex;
+}
+.wide {
+  grid-column: 1/-1;
+}
+.form-grid p {
+  margin: 0;
+}
+.provider-config {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+.provider-config > button {
+  justify-self: start;
+}
+.raw-key {
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.desktop-dialog.versions-panel {
+  width: min(1120px, 100%);
+  container-type: inline-size;
+  container-name: version-dialog;
+}
+.desktop-dialog.confirm-panel {
+  width: min(480px, 100%);
+}
+.dialog-content {
+  display: grid;
+  gap: var(--space-section);
+}
+.dialog-content > p,
+.dialog-content > h3 {
+  margin: 0;
+}
+.dialog-content > button {
+  justify-self: start;
+}
+.plain-fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.version-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.version-table {
+  max-height: min(360px, 40dvh);
+  min-height: 160px;
+  flex: initial;
+}
+.version-table table {
+  min-width: 640px;
+}
+.version-info {
+  padding: 16px;
+  border: 1px solid var(--line);
+  background: var(--side);
+  border-radius: 8px;
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  overflow-wrap: anywhere;
+}
+.version-query {
+  display: grid;
+  gap: 12px;
+}
+.version-query > p {
+  margin: 0;
+}
+.version-query form {
+  display: grid;
+  gap: 8px;
+}
+.version-query-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 12px;
+}
+.version-query-controls textarea,
+.version-id-field textarea {
+  display: block;
+  width: 100%;
+  min-height: 60px;
+  resize: vertical;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: var(--font-control);
+}
+.version-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  align-items: start;
+  gap: 20px;
+}
+.version-workspace > section {
+  min-width: 0;
+}
+.version-history {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+.version-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.version-section-heading h3 {
+  margin: 0;
+  font-size: var(--font);
+}
+.versioning-state,
+.version-caption {
+  font-size: var(--font-aux);
+  color: var(--muted);
+}
+.version-placeholder,
+.version-detail-empty {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 12px;
+  min-height: 160px;
+  text-align: center;
+}
+.version-info p,
+.version-history p {
+  margin: 0;
+}
+.version-id-field {
+  display: grid;
+  gap: 8px;
+  font-size: var(--font-control);
+  color: var(--muted);
+}
+.version-id-field textarea {
+  resize: none;
+  color: var(--text);
+}
+.version-properties {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  font-size: var(--font-control);
+  margin: 0;
+}
+.version-properties dt,
+.version-properties dd {
+  margin: 0;
+}
+.version-properties dd {
+  text-align: right;
+}
+.version-metadata summary {
+  cursor: pointer;
+  font-size: var(--font-control);
+}
+.version-metadata pre {
+  max-height: 160px;
+  overflow: auto;
+  margin-bottom: 0;
+}
+.version-date {
+  font-size: var(--font-aux);
+  font-variant-numeric: tabular-nums;
+}
+.version-latest {
+  color: var(--accent);
+  font-weight: 600;
+}
+.version-restore-note {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+@container version-dialog (max-width: 1000px) {
+  .version-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .version-properties {
+    grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr);
+  }
+  .version-detail-empty {
+    min-height: 90px;
+  }
+}
+@container version-dialog (max-width: 600px) {
+  .version-query-controls {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .version-query-controls button {
+    justify-self: end;
+  }
+  .version-properties {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+}
