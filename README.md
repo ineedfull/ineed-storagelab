@@ -2,9 +2,11 @@
 
 # StorageLab
 
-面向研发与运维的多厂商对象存储桌面工具箱。在同一个工作台管理连接、浏览对象、上传下载、检查版本，并用目录交付清单核对文件内容。
+简体中文 · [English](README.en.md)
 
-[Ineed 官网](https://www.ineedfull.com/) · [使用指南](docs/user-guide.md) · [测试版下载](docs/releases/2026-10-30.md) · [开发指南](docs/development.md)
+**开源 MinIO / S3 客户端与多厂商对象存储管理工具。** 支持 Amazon S3、阿里云 OSS、华为云 OBS、腾讯云 COS、火山引擎 TOS 和 S3 兼容存储。在同一个桌面工作台浏览对象、上传下载、管理版本、生成预签名分享链接，并用 SHA-256 目录交付清单核对文件内容。
+
+[产品官网](https://storagelab.ineedfull.com/) · [下载安装](https://storagelab.ineedfull.com/downloads/) · [使用指南](docs/user-guide.md) · [开发指南](docs/development.md)
 
 [![StorageLab 对象浏览：前缀目录、文件容量与对象属性](docs/images/readme/objects.webp)](docs/images/readme/objects.webp)
 
@@ -91,7 +93,7 @@ npm run test:ui
 
 ## 官网与交流
 
-官网：[www.ineedfull.com](https://www.ineedfull.com/)。StorageLab 的使用文档与测试包入口见本页上方链接。
+产品官网：[storagelab.ineedfull.com](https://storagelab.ineedfull.com/)；Ineed 主站：[www.ineedfull.com](https://www.ineedfull.com/)。
 
 使用中遇到问题，欢迎扫码加微信，添加时请备注「StorageLab」。反馈时请附系统、版本、操作步骤，并隐藏密钥、令牌及现场敏感信息。
 
@@ -99,4 +101,13 @@ npm run test:ui
 
 也可以发邮件：[xiaopanghhh@163.com](mailto:xiaopanghhh@163.com)。
 
-同系列工具：[MQTT Tool](https://mqtt.ineedfull.com/) · [LinkLab](https://linklab.ineedfull.com/) · [NetTool](https://nettool.ineedfull.com/) · [Ineed 主站](https://www.ineedfull.com/)。
+## 同系列开源工具
+
+| 工具 | 主要用途 | 产品官网 | 源码 |
+| --- | --- | --- | --- |
+| MQTT Tool | MQTT 客户端、按订阅独立显示 JSON/Text/HEX、设备消息场景 | [官网](https://mqtt.ineedfull.com/) | [GitHub](https://github.com/ineedfull/ineed-mqtt-tool) · [Gitee](https://gitee.com/ineedfull/ineed-mqtt-tool) |
+| LinkLab | 串口与工业协议联调、客户端/模拟服务端、设备验收 | [官网](https://linklab.ineedfull.com/) | [GitHub](https://github.com/ineedfull/ineed-linklab) · [Gitee](https://gitee.com/ineedfull/ineed-linklab) |
+| NetTool | IP 地址管理、网络工程规划与诊断、现场交付 | [官网](https://nettool.ineedfull.com/) | [GitHub](https://github.com/ineedfull/ineed-net-tool) · [Gitee](https://gitee.com/ineedfull/ineed-net-tool) |
+| StorageLab | MinIO/S3 与多厂商对象存储管理、目录交付校验 | [官网](https://storagelab.ineedfull.com/) | [GitHub](https://github.com/ineedfull/ineed-storagelab) · [Gitee](https://gitee.com/ineedfull/ineed-storagelab) |
+
+Ineed 主站：[www.ineedfull.com](https://www.ineedfull.com/)。
