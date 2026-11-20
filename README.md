@@ -6,7 +6,7 @@
 
 **开源 MinIO / S3 客户端与多厂商对象存储管理工具。** 支持 Amazon S3、阿里云 OSS、华为云 OBS、腾讯云 COS、火山引擎 TOS 和 S3 兼容存储。在同一个桌面工作台浏览对象、上传下载、管理版本、生成预签名分享链接，并用 SHA-256 目录交付清单核对文件内容。
 
-[产品官网](https://storagelab.ineedfull.com/) · [下载安装](https://storagelab.ineedfull.com/downloads/) · [使用指南](docs/user-guide.md) · [开发指南](docs/development.md)
+[产品官网](https://storagelab.ineedfull.com/) · [下载安装](https://storagelab.ineedfull.com/downloads/) · [使用指南](docs/user-guide.md) · [开发指南](docs/development.md) · [快速上手](docs/quick-start.md)
 
 [![StorageLab 对象浏览：前缀目录、文件容量与对象属性](docs/images/readme/objects.webp)](docs/images/readme/objects.webp)
 
@@ -46,6 +46,10 @@
 [![StorageLab 深色主题任务中心](docs/images/readme/tasks-dark.webp)](docs/images/readme/tasks-dark.webp)
 
 ## 开始使用
+
+本轮测试版：`1.0.1`，调整范围见[版本说明](docs/releases/2026-11-20.md)。已可下载的文件及构建标识以官网下载页为准。
+
+第一次使用？先按[快速上手](docs/quick-start.md)完成一个小练习，里面列出了示例参数、成功判断和常见问题排查。
 
 1. 创建连接，选择提供商并填写 Endpoint 与凭证。
 2. 按服务要求填写签名区域；有已知桶时可直接填默认桶，无需列出账号全部桶。

@@ -1,4 +1,6 @@
 import { test, expect, _electron as electron } from "@playwright/test";
+import { readFileSync } from "node:fs";
+const { version } = JSON.parse(readFileSync(new URL("../../package.json", import.meta.url), "utf8"));
 import { prepareElectronExecutable } from "../../scripts/dev-electron.mjs";
 test("production UI + native service + real local MinIO roundtrip", async ({}, info) => {
   test.skip(
@@ -222,7 +224,7 @@ test("production UI + native service + real local MinIO roundtrip", async ({}, i
     await page.reload();
     await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
     await page.getByRole("button", { name: "关于", exact: true }).click();
-    await expect(page.getByRole("dialog")).toContainText("1.0.0");
+    await expect(page.getByRole("dialog")).toContainText(version);
     await page.keyboard.press("Escape");
     await page.screenshot({ path: info.outputPath("native-workbench.png") });
     expect(errors).toEqual([]);

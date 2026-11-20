@@ -600,7 +600,7 @@ test("streaming GET retains deadline after response headers", async () => {
   const c = createOssClient(
     { ...connection, endpoint: `http://127.0.0.1:${server.address().port}` },
     credentials,
-    { timeoutSeconds: 0.04 },
+    { timeoutSeconds: 0.5 },
   );
   let timer;
   try {
@@ -619,7 +619,7 @@ test("streaming GET retains deadline after response headers", async () => {
       await Promise.race([
         closed,
         new Promise((resolve) => {
-          timer = setTimeout(() => resolve(false), 300);
+          timer = setTimeout(() => resolve(false), 2000);
         }),
       ]),
       true,

@@ -1,5 +1,7 @@
 import { test, expect, _electron as electron } from "@playwright/test";
 import { rm } from "node:fs/promises";
+import { readFileSync } from "node:fs";
+const { version } = JSON.parse(readFileSync(new URL("../../package.json", import.meta.url), "utf8"));
 import { prepareElectronExecutable } from "../../scripts/dev-electron.mjs";
 test("real production main starts branded app with isolated SQLite and truthful About", async () => {
   let isolated;
@@ -20,7 +22,7 @@ test("real production main starts branded app with isolated SQLite and truthful 
       "com.ineedfull.storagelab",
     );
     await expect(page.getByRole("dialog")).toContainText("Electron");
-    await expect(page.getByRole("dialog")).toContainText("1.0.0");
+    await expect(page.getByRole("dialog")).toContainText(version);
     const vault = await app.evaluate(() => globalThis.verifyNativeVault());
     if (vault.available)
       expect(vault).toEqual({

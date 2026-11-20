@@ -6,7 +6,7 @@
 
 **An open-source MinIO / S3 desktop client and multi-provider object storage manager.** Browse buckets and objects, queue uploads and downloads, inspect versions, generate presigned sharing URLs, and verify directory deliveries with SHA-256 manifests.
 
-[Website](https://storagelab.ineedfull.com/) · [Downloads](https://storagelab.ineedfull.com/downloads/) · [User guide](docs/user-guide.md) · [GitHub](https://github.com/ineedfull/ineed-storagelab) · [Gitee](https://gitee.com/ineedfull/ineed-storagelab)
+[Website](https://storagelab.ineedfull.com/) · [Downloads](https://storagelab.ineedfull.com/downloads/) · [User guide](docs/user-guide.md) · [GitHub](https://github.com/ineedfull/ineed-storagelab) · [Gitee](https://gitee.com/ineedfull/ineed-storagelab) · [Quick start (中文)](docs/quick-start.md)
 
 [![StorageLab object browser with prefixes, sizes and object properties](docs/images/readme/objects.webp)](docs/images/readme/objects.webp)
 
